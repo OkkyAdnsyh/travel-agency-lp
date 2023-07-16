@@ -1,0 +1,5 @@
+@mixin displayFlex($xPos, $yPos){
+    display: flex;
+    justify-content: $xPos;
+    align-items: $yPos;
+}
