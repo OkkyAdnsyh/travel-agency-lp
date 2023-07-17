@@ -65,6 +65,8 @@ navLink.forEach(link => {
     const blinderBottom = link.querySelector('.blinder .bottom');
     const textOverlay = link.querySelector('.link--text-overlay');
 
+    const socmedIcon = gsap.utils.toArray('.icon-group--link');
+
     const hoverTL = gsap.timeline().reverse()
 
     hoverTL.to(
@@ -105,4 +107,35 @@ navLink.forEach(link => {
     link.addEventListener('mouseleave', () => {
         hoverTL.reversed(true)
     })
+})
+
+window.addEventListener('load', () => {
+    const socmedIcon = gsap.utils.toArray('.icon-group--link')
+
+    gsap.timeline()
+    .fromTo(
+        '.banner--starter-textbox-header-group',
+        {y : -100},
+        {y : 0, duration : 3}
+    )
+    .fromTo(
+        '.banner--starter-textbox-header-group h1',
+        {y : -100},
+        {y : 0, duration : 2}, .1
+    )
+    .fromTo(
+        '.banner--starter-textbox-header-group h2',
+        {y : -200},
+        {y : 0, duration : 2}, .2
+    )
+    .fromTo(
+        '.icon-group',
+        {xPercent : -100},
+        {xPercent : 0, duration : .8, ease : 'power2.in'}, 1
+    )
+    .fromTo(
+        socmedIcon,
+        {xPercent : -150},
+        {xPercent : 0, duration : .6, ease : 'power2.in', stagger : .1}, 1
+    )
 })

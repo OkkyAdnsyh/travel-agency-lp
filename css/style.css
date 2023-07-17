@@ -140,6 +140,7 @@ nav {
   height: 100dvh;
   background: var(--primary-100);
   position: fixed;
+  z-index: 888;
 }
 nav ul {
   width: 100%;
@@ -227,4 +228,125 @@ nav ul li .nav--link .blinder .top {
 nav ul li .nav--link .blinder .bottom {
   -webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
           clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+.banner {
+  width: 100%;
+  height: 100dvh;
+}
+.banner .banner--starter,
+.banner .banner--overlay,
+.banner .banner--cta {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .banner--starter,
+.banner .banner--cta {
+  position: absolute;
+}
+.banner .banner--starter {
+  z-index: 2;
+}
+.banner .banner--starter .banner--starter-top {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+.banner .banner--starter .banner--starter-bottom {
+  -webkit-clip-path: polygon(0% 0, 50% 0, 50% 100%, 0% 100%);
+          clip-path: polygon(0% 0, 50% 0, 50% 100%, 0% 100%);
+  transform: scaleZ(1);
+}
+.banner .banner--starter .banner--overlay {
+  position: absolute;
+}
+.banner .banner--starter .banner--overlay .img,
+.banner .banner--starter .banner--overlay .textbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.banner .banner--starter .banner--overlay .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner .banner--starter .banner--overlay .textbox .icon-group {
+  position: absolute;
+  padding: 3.2rem;
+  border-radius: 0 1.6rem 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  background: linear-gradient(90deg, #7A7A7A 0%, rgba(171, 171, 171, 0) 99.99%);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
+  left: 0;
+}
+.banner .banner--starter .banner--overlay .textbox .banner--starter-textbox-header-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3.2rem;
+}
+.banner .banner--starter .banner--overlay .textbox .banner--starter-textbox-header-group h1 {
+  font-family: var(--headerFont);
+  font-size: 9.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--sec-100);
+  width: 80%;
+}
+.banner .banner--starter .banner--overlay .textbox .banner--starter-textbox-header-group h2 {
+  font-family: var(--headerFont);
+  font-size: 6.4rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-light);
+}
+.banner .banner--starter .banner--overlay .scroll-dir {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  bottom: 0;
+  row-gap: 1.6rem;
+}
+.banner .banner--starter .banner--overlay .scroll-dir p {
+  font-family: var(--pgFont);
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-light);
+}
+.banner .banner--starter .banner--overlay .scroll-dir .spacer {
+  width: 2px;
+  height: 2.4rem;
+  background: var(--text-light);
+  transform-origin: bottom;
+}
+.banner .banner--starter .banner--overlay .scroll-dir .arrow-group {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.6rem 2.4rem;
+  background: var(--primary-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  flex-direction: column;
+  border-radius: 2rem 2rem 0 0;
 }/*# sourceMappingURL=style.css.map */

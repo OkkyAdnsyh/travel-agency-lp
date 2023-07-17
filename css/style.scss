@@ -137,6 +137,7 @@ nav{
     height: 100dvh;
     background: var(--primary-100);
     position: fixed;
+    z-index: 888;
 
     ul{
         width: 100%;
@@ -215,6 +216,120 @@ nav{
                     .bottom{
                         clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
                     }
+                }
+            }
+        }
+    }
+}
+.banner{
+    width: 100%;
+    height: 100dvh;
+
+    .banner--starter,
+    .banner--overlay,
+    .banner--cta{
+        width: 100%;
+        height: 100%;
+        @include mixin.displayFlex(center, center);       
+    }
+
+    .banner--starter,
+    .banner--cta{
+        position: absolute;
+    }
+
+    .banner--starter{
+        z-index: 2;
+        .banner--starter-top{
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+        .banner--starter-bottom{
+            clip-path: polygon(0% 0, 50% 0, 50% 100%, 0% 100%);
+            transform: scaleZ(1)
+        }
+
+        .banner--overlay{
+            position: absolute;
+
+            .img,
+            .textbox{
+                width: 100%;
+                height: 100%;
+                @include mixin.displayFlex(center,center);
+                position: absolute;
+            }
+
+            .img{
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .textbox{
+                .icon-group{
+                    position: absolute;
+                    padding: 3.2rem;
+                    border-radius: 0 1.6rem 1.6rem 0;
+                    @include mixin.displayFlex(center,center);
+                    flex-direction: column;
+                    row-gap: 3.2rem;
+                    background: linear-gradient(90deg, #7A7A7A 0%, rgba(171, 171, 171, 0.00) 99.99%);
+                    backdrop-filter: blur(7.5px);
+                    left: 0;
+                }
+                .banner--starter-textbox-header-group{
+                    width: 100%;
+                    height: 100%;
+                    @include mixin.displayFlex(center,center);
+                    flex-direction: column;
+                    padding-bottom: 3.2rem;
+                    h1{
+                        font-family: var(--headerFont);
+                        font-size: 9.6rem;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: var(--sec-100);
+                        width: 80%;
+                    }
+                    h2{
+                        font-family: var(--headerFont);
+                        font-size: 6.4rem;
+                        font-weight: 500;
+                        text-align: center;
+                        color: var(--text-light);
+                    }
+                }
+            }
+            .scroll-dir{
+                position: absolute;
+                @include mixin.displayFlex(center, center);
+                flex-direction: column;
+                bottom: 0;
+                row-gap: 1.6rem;
+
+                p{
+                    font-family: var(--pgFont);
+                    font-size: 2rem;
+                    font-weight: 500;
+                    text-align: center;
+                    color: var(--text-light);
+                }
+                .spacer{
+                    width: 2px;
+                    height: 2.4rem;
+                    background: var(--text-light);
+                    transform-origin: bottom;
+                }
+                .arrow-group{
+                    width: fit-content;
+                    padding: 1.6rem 2.4rem;
+                    background: var(--primary-100);
+                    @include mixin.displayFlex(center,center);
+                    row-gap: 1rem;
+                    flex-direction: column;
+                    border-radius: 2rem 2rem 0 0;
                 }
             }
         }
